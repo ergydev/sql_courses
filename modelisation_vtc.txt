@@ -1,0 +1,31 @@
+BDD : vtc
+
+conducteur :
+------------
+    - id_conducteur     : INT (3) - PK AI
+    - nom               : VARCHAR (255)
+    - prenom            : VARCHAR (255)
+    - type_de_permis    : ENUM (A, B, C, D, E, AM)
+    - region            : VARCHAR (255)
+    - ville             : VARCHAR (255)
+    - date_embauche     : DATE 
+    - statut            : ENUM (titulaire, remplaçant, stagiaire)
+
+
+- vehicule :
+------------
+    - id_vehicule       : INT (3) - PK AI
+    - type              : VARCHAR (255)
+    - marque            : VARCHAR (255)
+    - modele            : VARCHAR (255)
+    - immatriculation   : VARCHAR (7)
+    - couleur           : VARCHAR (255)
+    - energie           : ENUM (diesel, essence, GPL, electrique, Hybride, ethanol)
+    - etat              : ENUM (disponible, indisponible)                
+
+
+- qui_conduit_quoi :
+--------------------
+    - id_qui_conduit_quoi   : INT (3) - PK AI
+    - id_conducteur         : INT (3) - FK : "index"
+    - id_vehicule           : INT (3) - FK : "index"

@@ -1,0 +1,172 @@
+SGBD
+    Système de Gestion de Base De Données : Mysql
+    - MySQL
+    - MariaDB
+    - PostgresSQL
+    - NoSQL (Not only SQL)
+    - Oracle
+    - MongoDB
+    - SQL server 
+    - ...
+
+
+Modèle MCD
+    1 BDD contenant x tables contenant x colonnes
+
+    bdd : eshop 
+        tables :
+            - membres
+                colonnes :
+                    - id
+                    - pseudo
+                    - mdp
+                    - nom
+                    - prenom
+                    - adresse
+                    - cp 
+                    - ville
+                    - email
+                    - telephone
+
+            - produits
+            - commandes
+                
+
+Les tables
+    1 table = 1 sujet 
+    BDD : entreprise de VTC
+        - Tables :
+            - conducteur
+            - vehicule
+            - qui_conduit_quoi
+            - ...
+
+
+Les colonnes | champs
+    1 colonne = 1 information de la table
+            - conducteur :
+                - id_conducteur
+                - nom
+                - prenom
+                - type_de_permis
+                - region
+                - ville
+                - date_embauche
+                - statut (titulaire | remplaçant)
+                
+
+            - vehicule :
+                - id_vehicule
+                - type 
+                - marque 
+                - modele
+                - immatriculation
+                - couleur
+                - energie 
+                - etat (disponible | indisponible)
+
+
+
+Les identifiants (Clé primaire - PK) Primary Key - Auto_increment
+    id_conducteur : PK - AI
+        PK : Primary Key : clé primaire unique
+        AI : Auto increment (auto incrémentation) : génère une liste numérotée
+
+
+
+NULL | NOT NULL
+    NOT NULL : une chaine de caractère vide | 0
+    NULL : NULL (inconnue)
+
+
+
+Les relations
+    1 conducteur conduit 1 véhicule
+
+
+
+Les cardinalités
+    1 conducteur - 0 véhicule 
+    1 conducteur - 1 véhicule
+    1 conducteur - n véhicule
+
+    1 véhicule - 0 conducteur 
+    1 véhicule - 1 conducteur
+    1 véhicule - n conducteur
+
+    id_conducteur   nom         prenom      type_de_permis      region              ...
+    ------------------------------------------------------------------------------------
+    23              Quittard    Mathieu     voiture             ile-de-France
+    25              Durand      Marc        voiture             ile-de-France
+
+
+    id_vehicule     modele      marque      id_conducteur   
+    -------------------------------------------------------
+    51              208         peugeot     23
+    58              megane      renault     25
+
+
+
+Table de jointure
+    table : qui_conduit_quoi
+                - id_qui_conduit_quoi
+                - id_conducteur 
+                - id_vehicule
+
+    cardinalités :
+        n, n
+        1, n
+        n, 1
+                
+    id_conducteur   nom         prenom      type_de_permis      region              ...
+    ------------------------------------------------------------------------------------
+    23              Quittard    Mathieu     voiture             ile-de-France
+    25              Durand      Marc        voiture             ile-de-France
+
+    id_vehicule     modele      marque        
+    ----------------------------------------
+    51              208         peugeot     
+    58              megane      renault 
+    103             TT          audi  
+
+    id_qui_conduit_quoi     id_conducteur       id_vehicule
+    -------------------------------------------------------
+    1                       23                  51
+    2                       23                  58
+    3                       23                  103
+    4                       25                  51
+
+
+
+Clés étrangères (FK - Foreign Key)
+    Une  clé primaire lorsqu'elle se retrouve sur une autre table.
+    FK : Foreign Key 
+    qui_conduit_quoi : 
+        id_conducteur (nous permet de savoir quel conducteur est concerné)
+        id_vehicule (nous permet de savoir quel vehicule est concerné)
+
+
+
+Index  
+    Primary     : pour une clé primaire
+    Unique      : afin de ne pas avoir plusieurs fois la même valeur dans une colonne 
+    Index       : nécessaire afin de pouvoir mettre en place une clé étrangère 
+    Fulltext    : pour indexer des champs texte (Myisam est recommandé pour les champs fulltext)
+
+
+
+Les enregistrements
+    Les données présentes à l'intérieur des tables.
+    1 ligne = 1 enregistrement
+
+
+Les requêtes
+    (question)
+    ----------
+    SELECT :    Sélection | vérification    => affichage, vérification  
+
+    (action)
+    ----------
+    INSERT :    Insertion                   => ajout
+    UPDATE :    Modification                => changement de valeur
+    DELETE :    Suppression                 => supprime des données existantes.
