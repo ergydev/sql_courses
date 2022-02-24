@@ -31,3 +31,14 @@ vehicule
 |         505 | Skoda               | Octavia | gris    | PB-631-TK       |
 |         506 | Volkswagen          | Passat  | gris    | XN-973-MM       |
 +-------------+---------------------+---------+---------+-----------------+
+
+-- exercice : Qui conduit la voiture 503 ?
+-- exercice : Qui conduit quoi ?
+
+-- exercice : Ajoutez vous dans la liste des conducteurs.
+-- exercice : Afficher tous les conducteurs (meme ceux qui n'ont pas de correspondance) ainsi que les vehicules
+
+-- exercice : Ajoutez un nouvel enregistrement dans la table des véhicules.
+-- exercice : Afficher les conducteurs et tous les vehicules (meme ceux qui n'ont pas de correspondance)
+
+-- exercice : Afficher tous les conducteurs et tous les vehicules, peut importe les correspondances 
