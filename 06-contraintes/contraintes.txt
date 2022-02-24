@@ -1,0 +1,9 @@
+-- 1/ 	Pour éviter les erreurs, la société de taxis aimerait que l’on ne puisse pas faire une mauvaise association lors de la saisie. Exemple : conducteur 58 avec le véhicule 900 (car ils n’existent pas). Faite le test
+------------------------------------------------------------------------------------------
+-- 2/	La société de taxis peut modifier leurs conducteurs via leur logiciel, lorsqu’un conducteur est modifié (dans la table conducteur - changement d’id par exemple), la société aimerait que la modification soit répercutée dans la table « association_vehicule_conducteur ».  Faite le test. 
+------------------------------------------------------------------------------------------
+-- 3/	La société de taxis peut supprimer des conducteurs via leur logiciel, ils aimeraient bloquer la possibilité de supprimer un conducteur (dans la table conducteur) tant que celui-ci conduit un véhicule. Faite le test.
+------------------------------------------------------------------------------------------
+-- 4/	La société de taxis peut modifier un véhicule via leur logiciel. Lorsqu’un véhicule est modifié (dans la table véhicule - changement d’id par exemple), la société aimerait que la modification soit répercutée dans la table « association_vehicule_conducteur ».  Faite le test.
+------------------------------------------------------------------------------------------
+-- 5/	Si un véhicule est supprimé alors qu’un ou plusieurs conducteurs le conduisaient, la société aimerait garder la présence de ces conducteurs dans la table « association_vehicule_conducteur » en précisant « null » comme valeur dans le champ correspondant puisque le véhicule aura été supprimé. Faite le test. 

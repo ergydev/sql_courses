@@ -622,23 +622,15 @@ BETWEEN '2012-01-01' AND '2014-12-31';
 |                    2438 |
 +-------------------------+
 -- 12 --* Afficher le nombre de service différent.
-SELECT service
-FROM employes
-GROUP BY service;
-+---------------+
-| service       |
-+---------------+
-| assistant     |
-| commercial    |
-| communication |
-| comptabilite  |
-| direction     |
-| informatique  |
-| juridique     |
-| production    |
-| secretariat   |
-| web           |
-+---------------+
+SELECT COUNT(DISTINCT service) 
+AS nombre 
+FROM employes ;
+
++--------+
+| nombre |
++--------+
+|     10 |
++--------+
 -- 13 -- Afficher tous les employés (sauf ceux du service production et secrétariat)
 SELECT id_employes, nom, prenom, service
 FROM employes
@@ -727,4 +719,8 @@ ASC LIMIT 1;
 | Mathieu |
 +---------+
 -- 20 --* Augmenter chaque employé de 100 €
+UPDATE employes
+SET salaire = salaire + 100;
 -- 21 -- Supprimer les employés du service secrétariat
+DELETE FROM employes
+WHERE service = 'secretariat';
